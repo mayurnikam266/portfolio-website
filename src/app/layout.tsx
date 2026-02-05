@@ -3,7 +3,7 @@ import './globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://portfolio-website-ochre-theta.vercel.app'),
+  metadataBase: new URL('https://mayurnikam.in'),
   title: {
     default: 'Mayur Nikam | DevOps Engineer & Cloud Specialist Portfolio',
     template: '%s | Mayur Nikam',
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://portfolio-website-ochre-theta.vercel.app',
+    url: 'https://mayurnikam.in',
     title: 'Mayur Nikam | DevOps Engineer & Cloud Specialist',
     description: 'Professional DevOps Engineer specializing in AWS, Kubernetes, Docker, and Ansible. Red Hat Certified with expertise in cloud infrastructure and automation.',
     siteName: 'Mayur Nikam Portfolio',
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     google: 'your-google-verification-code',
   },
   alternates: {
-    canonical: 'https://portfolio-website-ochre-theta.vercel.app',
+    canonical: 'https://mayurnikam.in',
   },
 }
 
@@ -97,8 +97,8 @@ export default function RootLayout({
               '@context': 'https://schema.org',
               '@type': 'Person',
               name: 'Mayur Nikam',
-              url: 'https://portfolio-website-ochre-theta.vercel.app',
-              image: 'https://portfolio-website-ochre-theta.vercel.app/passport-photo.jpeg',
+              url: 'https://mayurnikam.in',
+              image: 'https://mayurnikam.in/passport-photo.jpeg',
               jobTitle: 'DevOps Engineer',
               worksFor: {
                 '@type': 'EducationalOrganization',

@@ -4,7 +4,7 @@ Allow: /
 Disallow: /api/
 
 # Sitemap
-Sitemap: https://portfolio-website-ochre-theta.vercel.app/sitemap.xml
+Sitemap: https://mayurnikam.in/sitemap.xml
 
 # Crawl-delay
 Crawl-delay: 0
