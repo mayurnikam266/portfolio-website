@@ -30,8 +30,8 @@ export function Hero() {
         animate="show"
         className="max-w-4xl w-full text-center"
       >
-        <motion.div variants={item} className="mb-8">
-          <div className="relative w-32 h-32 mx-auto mb-8">
+        <motion.div variants={item} className="mb-6 sm:mb-8">
+          <div className="relative w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-6 sm:mb-8">
             <Image
               src="/passport-photo.jpeg"
               alt="Mayur Nikam"
@@ -44,32 +44,32 @@ export function Hero() {
 
         <motion.h1
           variants={item}
-          className="text-5xl md:text-7xl font-bold text-slate-900 dark:text-white mb-6 leading-tight"
+          className="text-3xl sm:text-5xl md:text-7xl font-bold text-slate-900 dark:text-white mb-4 sm:mb-6 leading-tight"
         >
           Mayur Nikam
         </motion.h1>
 
         <motion.p
           variants={item}
-          className="text-2xl md:text-3xl text-slate-600 dark:text-slate-300 font-light mb-8"
+          className="text-lg sm:text-2xl md:text-3xl text-slate-600 dark:text-slate-300 font-light mb-6 sm:mb-8 px-2"
         >
           B.Tech in AI & Data Science | Cloud & DevOps Enthusiast
         </motion.p>
 
         <motion.p
           variants={item}
-          className="text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto mb-12 leading-relaxed"
+          className="text-base sm:text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto mb-8 sm:mb-12 leading-relaxed px-4"
         >
           Strong expertise in Cloud Computing, DevOps, and Automation. Skilled in AWS, Kubernetes, Docker, and Ansible, experienced in deploying secure, scalable, and monitored cloud environments.
         </motion.p>
 
         <motion.div
           variants={item}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
+          className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-8 sm:mb-12 px-4"
         >
           <Link
             href="#projects"
-            className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors"
+            className="w-full sm:w-auto px-6 sm:px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors text-center"
           >
             View Projects
           </Link>

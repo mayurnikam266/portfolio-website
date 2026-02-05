@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useState } from 'react'
-import { ExternalLink, X } from 'lucide-react'
+import { ExternalLink, X, Github } from 'lucide-react'
 
 interface Project {
   id: string
@@ -10,6 +10,7 @@ interface Project {
   description: string
   technologies: string[]
   pdfFile: string
+  githubUrl: string
   highlights: string[]
 }
 
@@ -20,6 +21,7 @@ const projects: Project[] = [
     description: 'Developed an automated Virtual Machine health monitoring system using Ansible Dynamic Inventory for EC2 instance discovery (Environment=dev).',
     technologies: ['Ansible', 'AWS EC2', 'Dynamic Inventory', 'YAML', 'Linux', 'Python'],
     pdfFile: 'Virtual Machine Health Monitoring with Ansible.pdf',
+    githubUrl: 'https://github.com/mayurnikam266/Ansible-VM-Health-Monitoring',
     highlights: [
       'Developed automated VM health monitoring using Ansible Dynamic Inventory for EC2',
       'Monitored CPU, RAM, and Disk usage with auto-formatted HTML health reports',
@@ -33,6 +35,7 @@ const projects: Project[] = [
     description: 'Designed and deployed a secure AWS multi-tier architecture for WordPress using VPC with public and private subnets.',
     technologies: ['AWS EC2', 'VPC', 'IAM', 'NAT Gateway', 'Bastion Host', 'WordPress', 'MariaDB'],
     pdfFile: 'AWS Multitier Secure Wordpress Deployment.pdf',
+    githubUrl: 'https://github.com/mayurnikam266/AWS-Secure-Multi-Tier-Deployment',
     highlights: [
       'Designed secure AWS multi-tier architecture with VPC, public/private subnets',
       'Implemented Bastion Host for secure SSH access and NAT Gateway for outbound traffic',
@@ -150,13 +153,24 @@ export function Projects() {
                 </div>
               </div>
 
-              <button
-                onClick={() => setSelectedProject(project)}
-                className="w-full px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
-              >
-                <span>View Full Project</span>
-                <ExternalLink className="w-4 h-4" />
-              </button>
+              <div className="flex gap-2">
+                <button
+                  onClick={() => setSelectedProject(project)}
+                  className="flex-1 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
+                >
+                  <span>View PDF</span>
+                  <ExternalLink className="w-4 h-4" />
+                </button>
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 px-4 py-2 bg-slate-700 hover:bg-slate-800 dark:bg-slate-600 dark:hover:bg-slate-700 text-white rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
+                >
+                  <Github className="w-4 h-4" />
+                  <span>GitHub</span>
+                </a>
+              </div>
             </motion.div>
           ))}
         </div>
