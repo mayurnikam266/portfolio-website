@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'Mayur Nikam | DevOps Engineer',
   description: 'Professional portfolio of Mayur Nikam, experienced DevOps engineer specializing in cloud infrastructure, CI/CD, and automation.',
   keywords: ['DevOps', 'AWS', 'Kubernetes', 'CI/CD', 'Infrastructure', 'Automation', 'Cloud'],
-  author: 'Mayur Nikam',
+  authors: [{ name: 'Mayur Nikam' }],
   openGraph: {
     title: 'Mayur Nikam | DevOps Engineer',
     description: 'Professional portfolio of Mayur Nikam, experienced DevOps engineer specializing in cloud infrastructure, CI/CD, and automation.',
