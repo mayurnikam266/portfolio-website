@@ -21,7 +21,7 @@ const projects: Project[] = [
     description: 'Developed an automated Virtual Machine health monitoring system using Ansible Dynamic Inventory for EC2 instance discovery (Environment=dev).',
     technologies: ['Ansible', 'AWS EC2', 'Dynamic Inventory', 'YAML', 'Linux', 'Python'],
     pdfFile: 'Virtual Machine Health Monitoring with Ansible.pdf',
-    githubUrl: 'https://github.com/mayurnikam266/Ansible-VM-Health-Monitoring',
+    githubUrl: 'https://github.com/mayurnikam266/Ansible-VM-Monitoring',
     highlights: [
       'Developed automated VM health monitoring using Ansible Dynamic Inventory for EC2',
       'Monitored CPU, RAM, and Disk usage with auto-formatted HTML health reports',
@@ -35,7 +35,7 @@ const projects: Project[] = [
     description: 'Designed and deployed a secure AWS multi-tier architecture for WordPress using VPC with public and private subnets.',
     technologies: ['AWS EC2', 'VPC', 'IAM', 'NAT Gateway', 'Bastion Host', 'WordPress', 'MariaDB'],
     pdfFile: 'AWS Multitier Secure Wordpress Deployment.pdf',
-    githubUrl: 'https://github.com/mayurnikam266/AWS-Secure-Multi-Tier-Deployment',
+    githubUrl: 'https://github.com/mayurnikam266/AWS-multi-tier-architecture-deployment-with-bastion-host-and-nat-gateway',
     highlights: [
       'Designed secure AWS multi-tier architecture with VPC, public/private subnets',
       'Implemented Bastion Host for secure SSH access and NAT Gateway for outbound traffic',
@@ -68,22 +68,30 @@ function PdfModal({ project, onClose }: PdfModalProps) {
         onClick={(e) => e.stopPropagation()}
         className="bg-white dark:bg-slate-900 rounded-lg shadow-2xl w-full h-full max-w-[95vw] max-h-[95vh] overflow-hidden flex flex-col m-4"
       >
-        <div className="flex items-center justify-between p-4 border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800">
-          <h2 className="text-xl font-bold text-slate-900 dark:text-white">{project.title}</h2>
+        <div className="flex items-center justify-between p-3 sm:p-4 border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800">
+          <h2 className="text-sm sm:text-xl font-bold text-slate-900 dark:text-white line-clamp-1">{project.title}</h2>
           <button
             onClick={onClose}
-            className="p-2 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-lg transition-colors"
+            className="p-2 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-lg transition-colors flex-shrink-0"
             aria-label="Close"
           >
-            <X className="w-6 h-6" />
+            <X className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
         </div>
-        <div className="flex-1 overflow-hidden">
+        <div className="flex-1 overflow-hidden relative">
           <iframe
-            src={`/${project.pdfFile}`}
+            src={`/${project.pdfFile}#toolbar=1&navpanes=1&scrollbar=1&view=FitH`}
             className="w-full h-full"
             title={project.title}
+            style={{ border: 'none' }}
           />
+          <a
+            href={`/${project.pdfFile}`}
+            download
+            className="absolute bottom-4 right-4 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow-lg font-medium transition-colors text-sm sm:text-base"
+          >
+            Download PDF
+          </a>
         </div>
       </motion.div>
     </motion.div>
