@@ -2,30 +2,37 @@
 
 import { motion } from 'framer-motion'
 import { Section } from './section'
+import { Cloud, Container, Cog, Code, Monitor, Network } from 'lucide-react'
 
 const skillCategories = [
   {
     category: 'Cloud Platforms',
+    icon: Cloud,
     skills: ['AWS', 'EC2', 'S3', 'RDS', 'CloudWatch', 'CloudTrail', 'IAM', 'EKS', 'VPC'],
   },
   {
     category: 'Container & Orchestration',
+    icon: Container,
     skills: ['Docker', 'Podman', 'Kubernetes'],
   },
   {
     category: 'DevOps & Automation',
+    icon: Cog,
     skills: ['Ansible', 'Git', 'GitHub Actions', 'Jenkins Basics', 'CI/CD'],
   },
   {
     category: 'Programming & Scripting',
+    icon: Code,
     skills: ['Python', 'Bash', 'SQL', 'YAML'],
   },
   {
     category: 'Operating Systems',
+    icon: Monitor,
     skills: ['RHEL (Red Hat Certified)', 'Ubuntu', 'Linux', 'Windows'],
   },
   {
     category: 'Networking',
+    icon: Network,
     skills: ['TCP/IP', 'DNS', 'SSL/TLS', 'VPC', 'Security Groups', 'NAT Gateway'],
   },
 ]
@@ -69,15 +76,20 @@ export function Skills() {
           viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
-          {skillCategories.map((category) => (
-            <motion.div
-              key={category.category}
-              variants={itemVariants}
-              className="p-6 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-blue-400 dark:hover:border-blue-400 transition-colors"
-            >
-              <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-4">
-                {category.category}
-              </h3>
+          {skillCategories.map((category) => {
+            const Icon = category.icon
+            return (
+              <motion.div
+                key={category.category}
+                variants={itemVariants}
+                className="p-6 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-blue-400 dark:hover:border-blue-400 transition-colors"
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <Icon className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+                  <h3 className="text-xl font-semibold text-slate-900 dark:text-white">
+                    {category.category}
+                  </h3>
+                </div>
               <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill) => (
                   <span
@@ -88,8 +100,9 @@ export function Skills() {
                   </span>
                 ))}
               </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            )
+          })}
         </motion.div>
       </motion.div>
     </Section>

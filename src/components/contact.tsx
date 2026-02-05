@@ -93,8 +93,7 @@ export function Contact() {
           transition={{ delay: 0.6 }}
           className="pt-12 border-t border-slate-200 dark:border-slate-800 text-center text-slate-600 dark:text-slate-400"
         >
-          <p className="mb-4">Based in San Francisco, CA • Available for remote and on-site work</p>
-          <p className="text-sm">© 2024 Mayur Nikam. All rights reserved.</p>
+          <p className="text-sm">© 2026 Mayur Nikam. All rights reserved.</p>
         </motion.div>
       </motion.div>
     </Section>
