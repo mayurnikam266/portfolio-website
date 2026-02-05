@@ -18,20 +18,20 @@ export function About() {
 
         <div className="space-y-6 text-lg text-slate-600 dark:text-slate-300 leading-relaxed" style={{ textAlign: 'justify' }}>
           <p>
-            I'm pursuing B.Tech in Artificial Intelligence and Data Science at Maharashtra Institute of Technology, Aurangabad 
+            I&apos;m pursuing B.Tech in Artificial Intelligence and Data Science at Maharashtra Institute of Technology, Aurangabad 
             with a CGPA of 8.45/10. My passion lies in Cloud Computing, DevOps, and Automation, where I combine academic 
             knowledge with hands-on experience to build robust infrastructure solutions.
           </p>
 
           <p>
             With strong expertise in AWS (EC2, S3, CloudWatch, IAM, RDS), Kubernetes, Docker, and Ansible, I focus on deploying 
-            secure, scalable, and monitored cloud environments. I'm hands-on with TCP/IP, DNS, and SSL/TLS networking concepts, 
+            secure, scalable, and monitored cloud environments. I&apos;m hands-on with TCP/IP, DNS, and SSL/TLS networking concepts, 
             ensuring comprehensive understanding of infrastructure at all layers.
           </p>
 
           <p>
             As a Red Hat Academy Student Ambassador at MIT Aurangabad, I actively promote Linux and open-source culture, 
-            conduct technical workshops, and guide peers in setting up RHEL environments. I'm Red Hat Certified (RHCSA & RHCE) 
+            conduct technical workshops, and guide peers in setting up RHEL environments. I&apos;m Red Hat Certified (RHCSA & RHCE) 
             and committed to continuous learning in the DevOps ecosystem.
           </p>
         </div>
