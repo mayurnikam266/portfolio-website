@@ -55,17 +55,17 @@ const itemVariants = {
 
 export function Skills() {
   return (
-    <Section id="skills" className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <Section id="skills" className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
+        <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 dark:text-neutral-50 mb-5 tracking-tight">
           Skills & Expertise
         </h2>
-        <p className="text-lg text-slate-600 dark:text-slate-400 mb-12">
+        <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-14 font-body">
           A comprehensive toolkit for modern DevOps and cloud infrastructure
         </p>
 
@@ -82,19 +82,19 @@ export function Skills() {
               <motion.div
                 key={category.category}
                 variants={itemVariants}
-                className="p-6 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-blue-400 dark:hover:border-blue-400 transition-colors"
+                className="p-7 rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 hover:border-blue-400 dark:hover:border-blue-500 transition-all duration-200 shadow-soft hover:shadow-soft-lg"
               >
-                <div className="flex items-center gap-3 mb-4">
-                  <Icon className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-                  <h3 className="text-xl font-semibold text-slate-900 dark:text-white">
+                <div className="flex items-center gap-3 mb-5">
+                  <Icon className="w-6 h-6 text-blue-600 dark:text-blue-400 flex-shrink-0" />
+                  <h3 className="text-xl font-semibold text-neutral-900 dark:text-neutral-50 tracking-tight">
                     {category.category}
                   </h3>
                 </div>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2.5">
                 {category.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-1 bg-white dark:bg-slate-700 text-slate-700 dark:text-slate-300 text-sm font-medium rounded-full border border-slate-200 dark:border-slate-600"
+                    className="px-3.5 py-1.5 bg-white dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 text-sm font-medium rounded-lg border border-neutral-200 dark:border-neutral-700"
                   >
                     {skill}
                   </span>

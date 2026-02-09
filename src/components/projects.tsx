@@ -59,20 +59,20 @@ function PdfModal({ project, onClose }: PdfModalProps) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       onClick={onClose}
-      className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center"
+      className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center backdrop-blur-sm"
     >
       <motion.div
         initial={{ scale: 0.95, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.95, opacity: 0 }}
         onClick={(e) => e.stopPropagation()}
-        className="bg-white dark:bg-slate-900 rounded-lg shadow-2xl w-full h-full max-w-[95vw] max-h-[95vh] overflow-hidden flex flex-col m-4"
+        className="bg-neutral-50 dark:bg-neutral-900 rounded-2xl shadow-soft-lg w-full h-full max-w-[95vw] max-h-[95vh] overflow-hidden flex flex-col m-4"
       >
-        <div className="flex items-center justify-between p-3 sm:p-4 border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800">
-          <h2 className="text-sm sm:text-xl font-bold text-slate-900 dark:text-white line-clamp-1">{project.title}</h2>
+        <div className="flex items-center justify-between p-4 sm:p-5 border-b border-neutral-200 dark:border-neutral-800 bg-neutral-100 dark:bg-neutral-800">
+          <h2 className="text-sm sm:text-xl font-bold text-neutral-900 dark:text-neutral-50 line-clamp-1 tracking-tight">{project.title}</h2>
           <button
             onClick={onClose}
-            className="p-2 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-lg transition-colors flex-shrink-0"
+            className="p-2.5 hover:bg-neutral-200 dark:hover:bg-neutral-700 rounded-xl transition-colors flex-shrink-0"
             aria-label="Close"
           >
             <X className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -88,7 +88,7 @@ function PdfModal({ project, onClose }: PdfModalProps) {
           <a
             href={`/${project.pdfFile}`}
             download
-            className="absolute bottom-4 right-4 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow-lg font-medium transition-colors text-sm sm:text-base"
+            className="absolute bottom-4 right-4 px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl shadow-soft-lg font-semibold transition-all duration-200 text-sm sm:text-base hover:-translate-y-0.5"
           >
             Download PDF
           </a>
@@ -102,21 +102,21 @@ export function Projects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
 
   return (
-    <section id="projects" className="py-16 md:py-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="py-20 md:py-28 max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
+        <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 dark:text-neutral-50 mb-5 tracking-tight">
           Featured Projects
         </h2>
-        <p className="text-lg text-slate-600 dark:text-slate-400 mb-12">
+        <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-14 font-body">
           Showcasing key projects and accomplishments
         </p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-7">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -124,36 +124,36 @@ export function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group p-6 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg hover:border-blue-400 dark:hover:border-blue-400 transition-all hover:shadow-lg"
+              className="group p-7 bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl hover:border-blue-400 dark:hover:border-blue-500 transition-all duration-200 shadow-soft hover:shadow-soft-lg"
             >
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">
+              <h3 className="text-2xl font-bold text-neutral-900 dark:text-neutral-50 mb-4 tracking-tight">
                 {project.title}
               </h3>
 
-              <p className="text-slate-600 dark:text-slate-300 mb-4 line-clamp-3">
+              <p className="text-neutral-600 dark:text-neutral-400 mb-5 line-clamp-3 leading-relaxed font-body">
                 {project.description}
               </p>
 
-              <div className="mb-4">
-                <h4 className="text-sm font-semibold text-slate-600 dark:text-slate-400 mb-2">
+              <div className="mb-5">
+                <h4 className="text-sm font-semibold text-neutral-600 dark:text-neutral-400 mb-3">
                   Key Highlights:
                 </h4>
-                <ul className="space-y-1">
+                <ul className="space-y-2">
                   {project.highlights.slice(0, 2).map((highlight, i) => (
-                    <li key={i} className="text-sm text-slate-600 dark:text-slate-300 flex items-start">
-                      <span className="text-blue-600 dark:text-blue-400 mr-2">•</span>
+                    <li key={i} className="text-sm text-neutral-600 dark:text-neutral-400 flex items-start leading-relaxed">
+                      <span className="text-blue-600 dark:text-blue-400 mr-2.5 mt-0.5 flex-shrink-0">•</span>
                       {highlight}
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className="mb-4">
+              <div className="mb-5">
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="px-2 py-1 bg-white dark:bg-slate-700 text-xs font-medium text-slate-700 dark:text-slate-300 rounded"
+                      className="px-3 py-1.5 bg-white dark:bg-neutral-800 text-xs font-medium text-neutral-700 dark:text-neutral-300 rounded-lg border border-neutral-200 dark:border-neutral-700"
                     >
                       {tech}
                     </span>
@@ -161,10 +161,10 @@ export function Projects() {
                 </div>
               </div>
 
-              <div className="flex gap-2">
+              <div className="flex gap-3">
                 <button
                   onClick={() => setSelectedProject(project)}
-                  className="flex-1 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
+                  className="flex-1 px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold transition-all duration-200 flex items-center justify-center gap-2 shadow-soft hover:shadow-soft-lg hover:-translate-y-0.5"
                 >
                   <span>View PDF</span>
                   <ExternalLink className="w-4 h-4" />
@@ -173,7 +173,7 @@ export function Projects() {
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 px-4 py-2 bg-slate-700 hover:bg-slate-800 dark:bg-slate-600 dark:hover:bg-slate-700 text-white rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
+                  className="flex-1 px-5 py-3 bg-neutral-700 hover:bg-neutral-800 dark:bg-neutral-800 dark:hover:bg-neutral-700 text-white rounded-xl font-semibold transition-all duration-200 flex items-center justify-center gap-2"
                 >
                   <Github className="w-4 h-4" />
                   <span>GitHub</span>
